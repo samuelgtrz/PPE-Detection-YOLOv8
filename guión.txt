@@ -1,5 +1,13 @@
 Guion
 1- Subir imagenes
-2- Probar en el CESGA modelo V8
+2- Probar en el CESGA modelo V8 (con una imagen del dataset descargado detecta medio mal)
+2.1- Probar un fine tunning con el dataset tal cual
 3- Dividir las fotos para limpiar
 4- Volver a probar modelo
+
+Preguntas:
+Al limpiar dataset, en una foto del roboflow vemos que marca 3 epis pero en la misma foto pero distinto frame solo marca 2, qué hacemos en esos casos? borramos la foto, la dejamos, seleccionamos la que más epis anotados tiene?
+
+Tema colas para gpu, estuvimos esperando para que se nos asignara una gpu como dos horas.
+
+Imágenes corruptas en el cesga al probar un fine tunning?
