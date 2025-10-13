@@ -1,0 +1,5 @@
+Guion
+1- Subir imagenes
+2- Probar en el CESGA modelo V8
+3- Dividir las fotos para limpiar
+4- Volver a probar modelo
