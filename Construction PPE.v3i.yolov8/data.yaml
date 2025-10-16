@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: C:/Users/sam20/OneDrive/Documentos/IA/CuartoIA/Proyecto_Integrador_2/Proyecto/Construction PPE.v3i.yolov8/train/images
+val: C:/Users/sam20/OneDrive/Documentos/IA/CuartoIA/Proyecto_Integrador_2/Proyecto/Construction PPE.v3i.yolov8/valid/images
+test: C:/Users/sam20/OneDrive/Documentos/IA/CuartoIA/Proyecto_Integrador_2/Proyecto/Construction PPE.v3i.yolov8/test/images
 
 nc: 16
 names: ['Gloves', 'Helmet', 'Human', 'Safety Boot', 'Safety Vest', 'boots', 'glasses', 'gloves', 'hat', 'helmet', 'no boot', 'no boots', 'no gloves', 'no hat', 'no vest', 'vest']

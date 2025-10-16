@@ -11,3 +11,5 @@ Al limpiar dataset, en una foto del roboflow vemos que marca 3 epis pero en la m
 Tema colas para gpu, estuvimos esperando para que se nos asignara una gpu como dos horas.
 
 Imágenes corruptas en el cesga al probar un fine tunning?
+
+Hacer un clustering para reducir el numero de imágenes y coger las que son iguales, dentro de las iguales cogemos la que tenga el mayor número de etiquetas
