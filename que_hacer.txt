@@ -1,0 +1,3 @@
+Probar a hacer un clustering sobre lo qué se ve en la imagen, para no tener tantísimas repetidas.
+Depurar data.yaml, hay muchos epis, y si eliminamos alguno de ahí, tenemos que hacer un script que borre todas las no queramos de las etiquetas
+Probar modelos de yolo más grandes, no solo el 8n
