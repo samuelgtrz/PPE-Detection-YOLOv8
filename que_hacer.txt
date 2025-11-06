@@ -1,5 +1,9 @@
-Probar a hacer un clustering sobre lo qué se ve en la imagen, para no tener tantísimas repetidas.
-Depurar data.yaml, hay muchos epis, y si eliminamos alguno de ahí, tenemos que hacer un script que borre todas las no queramos de las etiquetas
-Probar modelos de yolo más grandes, no solo el 8n
-Hacer escala de 256x256, pasar a escala de grises y calcular distancias entre imágenes, para eliminar las que son muy parecidas.
-Al ejecutar validación, añadir en el código algo que haga lo siguiente: esta imagen me da este score, y esta es la predicción, y esta es la real
+1. Probar a hacer un clustering por nombre sobre lo qué se ve en la imagen, para no tener tantísimas repetidas. 
+	Resultado: Pasamos de 9000 a 1500 imágenes.
+
+2. Hacer escala de 256x256, pasar a escala de grises y calcular distancias entre imágenes, para eliminar las que son muy parecidas.
+	En progreso
+
+3. Depurar data.yaml, hay muchos epis, y si eliminamos alguno de ahí, tenemos que hacer un script que borre todas las no queramos de las etiquetas
+4. Probar modelos de yolo más grandes, no solo el 8n
+5. Al ejecutar validación, añadir en el código algo que haga lo siguiente: esta imagen me da este score, y esta es la predicción, y esta es la real
