@@ -1,8 +1,9 @@
 1. Probar a hacer un clustering por nombre sobre lo qué se ve en la imagen, para no tener tantísimas repetidas. 
-	Resultado: Pasamos de 9000 a 1500 imágenes.
+	Resultado: Pasamos de 9000 a 2000 imágenes.
 
 2. Hacer escala de 256x256, pasar a escala de grises y calcular distancias entre imágenes, para eliminar las que son muy parecidas.
-	En progreso
+2.1 OTRA OPCIÓN: Utilizamos un extractor de características ResNet.
+	Resultado: Pasamos de 2000 a 1000 imágenes.
 
 3. Depurar data.yaml, hay muchos epis, y si eliminamos alguno de ahí, tenemos que hacer un script que borre todas las no queramos de las etiquetas
 4. Probar modelos de yolo más grandes, no solo el 8n

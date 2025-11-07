@@ -69,7 +69,7 @@ COMANDOS DE XESTIÓN XERAL DO CESGA
 
 Para conectarse ao CESGA: ssh -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es
 
-Para subir un arquivo ao CESGA: scp -o MACs=hmac-sha2-512 "nome_arquivo"
+Para subir un arquivo ao CESGA: scp -o MACs=hmac-sha2-512 "nome_arquivo" curso1278@ft3.cesga.es:/ruta/á/carpeta
 
 Para subir un arquivo ao directorio $STORE/Proyecto-Integrador-de-IA: scp -o MACs=hmac-sha2-512 "nome_arquivo" curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/Proyecto-Integrador-de-IA/
 
