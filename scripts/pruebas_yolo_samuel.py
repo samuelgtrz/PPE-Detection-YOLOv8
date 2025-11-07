@@ -23,7 +23,7 @@ def check_dataset_structure(base_dir):
     return True
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": #puede no ser necesario en el cesga esl name=main
 
     BASE_DIR = os.path.expanduser("/Users/sam20/OneDrive/Documentos/IA/CuartoIA/Proyecto_Integrador_2/Proyecto/imagenes_limpias") 
     DATA_YAML = os.path.join(BASE_DIR, "data.yaml")
@@ -72,6 +72,10 @@ if __name__ == "__main__":
     print("📊 Evaluando el modelo...")
     metrics = model.val()
     print(metrics)
+
+    # Probar el modelo entrenado en el conjunto de test
+    results = model.predict(source="/mnt/netapp2/Store_uni/home/usc/cursos/curso1589/test/images", save=True, conf=0.5) #conf significa confidence threshold
+    print("Predicciones completadas. Archivos guardados en:", model.predictor.save_dir)
 
     # === EXPORTAR MODELO ===
     print("💾 Exportando modelo a formato ONNX...")

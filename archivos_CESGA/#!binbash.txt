@@ -1,0 +1,50 @@
+#!/bin/bash
+#SBATCH --job-name=yolo_finetune
+#SBATCH --output=salidas/salida_yolo_%j.txt
+#SBATCH --error=salidas/error_yolo_%j.txt
+#SBATCH --time=01:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --gres=gpu:a100:1
+#SBATCH --mem=32G
+#SBATCH --partition=gpu-a100
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=samuel.gutierrez@rai.usc.es
+
+echo "=== Iniciando trabajo en CESGA ==="
+date
+
+
+# === 1. Cargar entorno base del usuario ===
+source ~/.bashrc
+
+# === 2. Comprobar si conda existe ===
+if ! command -v conda &> /dev/null; then
+    echo "❌ ERROR: conda no está disponible. Intenta cargar el entorno del curso o crear uno local."
+    exit 1
+fi
+
+# === 3. Crear entorno si no existe ===
+if ! conda info --envs | grep -q "yolov8_env"; then
+    echo "Creando entorno conda yolov8_env..."
+    conda create -n yolov8_env python=3.10 -y
+fi
+
+# === 4. Activar entorno ===
+source activate yolov8_env
+
+# === 5. Instalar dependencias ===
+echo "Instalando dependencias necesarias..."
+pip install --upgrade pip
+pip install torch torchvision torchaudio ultralytics tqdm --quiet
+
+# === 6. Mostrar GPU detectada ===
+echo "Detectando GPU disponible..."
+nvidia-smi
+
+# === 7. Ejecutar entrenamiento ===
+echo "Ejecutando entrenamiento YOLOv8..."
+python pruebas_yolo_mejoradas.py > salidas/salida_python_${SLURM_JOB_ID}.txt 2>&1
+
+echo "=== Trabajo finalizado ==="
+date
