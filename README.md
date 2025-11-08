@@ -11,7 +11,7 @@ A continuación se muestran algunos resultados obtenidos tras el fine-tuning del
 
 | Ejemplo 1 | Ejemplo 2 |
 |------------|------------|
-| ![Inferencia 1](./resultados_ejecuciones/4_ppe_yolov8_finetuned_etiquetas_mod/predicciones/Aitin0586_jpg.rf.8cad5fb756af5f7f315c920e6115014e.jpg) | ![Inferencia 2](./inferencia2.jpg) |
+| ![Inferencia 1](./resultados_ejecuciones/4_ppe_yolov8_finetuned_etiquetas_mod/predicciones/Aitin0586_jpg.rf.8cad5fb756af5f7f315c920e6115014e.jpg) | ![Inferencia 2](.resultados_ejecuciones/4_ppe_yolov8_finetuned_etiquetas_mod/predicciones/image_160_jpg.rf.2ec56a1123be881b57114fd04821d6cb.jpg) |
 
 > Las imágenes de inferencia se incluyen únicamente con fines demostrativos.
 
