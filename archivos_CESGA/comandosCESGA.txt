@@ -1,5 +1,5 @@
 ************
-COMO CONFIGURAR GIT NO CESGA
+COMO CONFIGURAR GIT NO CESGA (non é necesario)
 
 Débese crear unha clave SSH. Para comprobar se xa a hai: ls ~/.ssh
     - Para crear unha clave (se non hai): ssh-keygen -t ed25519 -C "correo_electrónico"
@@ -16,43 +16,13 @@ Clonar o repositorio de GIT: git clone git@github.com:samuelgtrz/Proyecto-Integr
 
 
 
-************
-COMO ACTUALIZAR VERSIÓN DE PYTHON A 3.9.16
-
-Acceder a ~/.bashrc: nano ~/.bashrc. Para ter Python 3.9, este arquivo debe estar así:
-------------------------------------------------------------------------------------------
-
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
-fi
-
-# User specific aliases and functions
-# === Configuración para usar Miniconda en CESGA ===
-module purge
-module load cesga/system miniconda3/22.11.1-1
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/opt/cesga/system/software/Core/miniconda3/22.11.1-1/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/opt/cesga/system/software/Core/miniconda3/22.11.1-1/etc/profile.d/conda.sh" ]; then
-        . "/opt/cesga/system/software/Core/miniconda3/22.11.1-1/etc/profile.d/conda.sh"
-    else
-        export PATH="/opt/cesga/system/software/Core/miniconda3/22.11.1-1/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-------------------------------------------------------------------------------------------
-************
-
-
 
 ************
-CREACIÓN DUN ENTORNO MINICONDA (OPCIÓN 2)
+COMO CREAR UN ENTORNO MINICONDA COMPATIBLE CON YOLO
+
+Para limpar os módulos precargados: module purge
+
+Para cargar o módulo de Miniconda cunha versión de Python que soporte Yolo: module --ignore-cache load cesga/system miniconda3/22.11.1-1
 
 Crear un entorno conda con Python 3.9 no directorio $STORE: conda create -p /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/yolov8_env python=3.9 -y
 
@@ -80,17 +50,15 @@ Para subir un arquivo ao directorio $STORE/Proyecto-Integrador-de-IA: scp -o MAC
 
 Para descomprimir un zip no CESGA: unzip -o "nome_arquivo"
 
-Para comprimir unha carpeta no CESGA: zip "nome_carpeta".zip /ruta/á/carpeta
+Para comprimir unha carpeta no CESGA: zip -r "nome_carpeta".zip /ruta/á/carpeta
 
-Para descargar un arquivo do CESGA: scp -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/"nome_carpeta".zip .
+Para descargar unha carpeta comprimida do CESGA: scp -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/"nome_carpeta".zip .
 
-Para descomprimir un tar en local: tar -xzvf "nome_arquivo"
-
-Para añadir un arquivo a GIT: git add "nome_arquivo"; git commit -m "explicación"; git push origin main
+Para añadir un arquivo a GIT: git add "nome_arquivo"; git commit -m "explicación"; git push
 
 Para comprobar o tamaño dunha carpeta: du -sh /ruta/á/carpeta
 
-Para comprobar o tamaño dunha imaxe: ls -lh "nome_arquivo"
+Para comprobar o tamaño dun arquivo: ls -lh "nome_arquivo"
 
 Para comprobar se temos acceso a GPU: srun --partition=medium --gres=gpu:a100:1 --nodes=1 --ntasks-per-node=32 --mem=128G --time=00:01:00 --test-only
 
@@ -99,4 +67,5 @@ Para recuperar con GIT unha carpeta eliminada: git checkout origin/main -- "nomb
 Para conceder permisos sobre carpetas que dan problemas: chmod -R u+w /ruta/á/carpeta 
 
 Recargar o servidor do CESGA: source ~/.bashrc
+
 ************
