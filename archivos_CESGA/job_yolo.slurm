@@ -7,7 +7,7 @@
 #SBATCH --mem=128G
 #SBATCH --gres=gpu:1
 #SBATCH --partition=medium
-#SBATCH --time=2:00:00
+#SBATCH --time=1:00:00
 #SBATCH --mail-type=END,FAIL
 #SBATCH --mail-user=breixo.brea@rai.usc.es
 

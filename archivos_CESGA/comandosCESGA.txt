@@ -17,9 +17,9 @@ Clonar o repositorio de GIT: git clone git@github.com:samuelgtrz/Proyecto-Integr
 
 
 ************
-CREACIÓN DO ENTORNO MINICONDA
+COMO ACTUALIZAR VERSIÓN DE PYTHON A 3.9.16
 
-Acceder a ~/.bashrc: nano ~/.bashrc. Este arquivo debe estar así:
+Acceder a ~/.bashrc: nano ~/.bashrc. Para ter Python 3.9, este arquivo debe estar así:
 ------------------------------------------------------------------------------------------
 
 # Source global definitions
@@ -47,7 +47,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 ------------------------------------------------------------------------------------------
+************
 
+
+
+************
+CREACIÓN DUN ENTORNO MINICONDA (OPCIÓN 2)
 
 Crear un entorno conda con Python 3.9 no directorio $STORE: conda create -p /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/yolov8_env python=3.9 -y
 
@@ -75,9 +80,9 @@ Para subir un arquivo ao directorio $STORE/Proyecto-Integrador-de-IA: scp -o MAC
 
 Para descomprimir un zip no CESGA: unzip -o "nome_arquivo"
 
-Para comprimir un arquivo no CESGA: tar -czvf "descarga".tar.gz /ruta/á/carpeta
+Para comprimir unha carpeta no CESGA: zip "nome_carpeta".zip /ruta/á/carpeta
 
-Para descargar un arquivo do CESGA: scp -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/runs.tar.gz .
+Para descargar un arquivo do CESGA: scp -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/"nome_carpeta".zip .
 
 Para descomprimir un tar en local: tar -xzvf "nome_arquivo"
 
@@ -90,6 +95,8 @@ Para comprobar o tamaño dunha imaxe: ls -lh "nome_arquivo"
 Para comprobar se temos acceso a GPU: srun --partition=medium --gres=gpu:a100:1 --nodes=1 --ntasks-per-node=32 --mem=128G --time=00:01:00 --test-only
 
 Para recuperar con GIT unha carpeta eliminada: git checkout origin/main -- "nombre_carpeta"
+
+Para conceder permisos sobre carpetas que dan problemas: chmod -R u+w /ruta/á/carpeta 
 
 Recargar o servidor do CESGA: source ~/.bashrc
 ************
