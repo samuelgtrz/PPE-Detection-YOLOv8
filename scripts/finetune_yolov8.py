@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
     # === CARGAR MODELO YOLOv8 ===
     try:
-        model = YOLO("yolov8s.pt")
+        model = YOLO("yolov8m.pt")
         print("Modelo YOLOv8 cargado correctamente.")
     except Exception as e:
         print("Error al cargar el modelo YOLOv8:", e)
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         pretrained=True,                # Utiliza pesos preentrenados
         augment=True,                   # Utiliza data augmentation
         workers=4,                      # Número de hilos para carga de datos
-        freeze=10                       # Congela las primeras 10 capas
+        #freeze=10                       # Congela las primeras 10 capas
     )
 
     # === VALIDACIÓN POST-ENTRENAMIENTO ===

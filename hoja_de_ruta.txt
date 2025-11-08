@@ -9,6 +9,7 @@
 3.1 NOTA: Eliminamos la clase Glasses porque no se estaba detectando; queda pendiente añadir los EPIs de gafas y máscaras.
 	Resultado: Aumentamos la precisión.
 
-4. Probar modelos de yolo más grandes, no solo el 8n (8s, 8m, …)
+4. Probar modelos de yolo más grandes, no solo el 8n (8s, 8m, …), con y sin el parámetro freeze.
+	Resultado: Parece que el mejor resultado es yolov8m sin freeze. Queda pendiente ajustar freeze.
 
 5. Al ejecutar validación, añadir en el código algo que haga lo siguiente: esta imagen me da este score, y esta es la predicción, y esta es la real.

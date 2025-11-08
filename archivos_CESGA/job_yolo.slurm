@@ -22,7 +22,6 @@ conda activate /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/yolov8_env
 
 # --- Información de entorno ---
 echo "=== INICIO DEL JOB ${SLURM_JOB_ID} ==="
-date
 hostname
 nvidia-smi
 echo "======================================"
