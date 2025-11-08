@@ -3,7 +3,7 @@ val: C:/Users/sam20/OneDrive/Documentos/IA/CuartoIA/Proyecto_Integrador_2/Proyec
 test: C:/Users/sam20/OneDrive/Documentos/IA/CuartoIA/Proyecto_Integrador_2/Proyecto/Construction PPE.v3i.yolov8/test/images
 
 nc: 6
-names: ['Gloves', 'Helmet', 'Human', 'Safety Boot', 'Safety Vest', 'glasses']
+names: ['Gloves', 'Helmet', 'Human', 'Safety Boot', 'Safety Vest', 'Glasses']
 
 roboflow:
   workspace: skcet-g4h72
