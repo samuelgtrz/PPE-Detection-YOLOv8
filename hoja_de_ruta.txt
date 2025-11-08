@@ -6,5 +6,8 @@
 	Resultado: Pasamos de 2000 a 1000 imágenes.
 
 3. Depurar data.yaml, hay muchos epis, y si eliminamos alguno de ahí, tenemos que hacer un script que borre todas las no queramos de las etiquetas
+	Resultado: Aumentamos a precisión.
+
 4. Probar modelos de yolo más grandes, no solo el 8n
+
 5. Al ejecutar validación, añadir en el código algo que haga lo siguiente: esta imagen me da este score, y esta es la predicción, y esta es la real
