@@ -5,9 +5,9 @@ from PIL import Image
 from tqdm import tqdm
 
 # === CONFIGURACIÓN ===
-DUP_FILE = "dup_report.txt"
-ORIG_BASE = "C:\\Users\\Usuario\\OneDrive - Universidade de Santiago de Compostela\\GRIA\\4º CURSO. 1º CUADRIMESTRE\\Proxecto Integrador II\\Proyecto-Integrador-de-IA\\imagenes_limpias"
-NEW_BASE = "C:\\Users\\Usuario\\OneDrive - Universidade de Santiago de Compostela\\GRIA\\4º CURSO. 1º CUADRIMESTRE\\Proxecto Integrador II\\Proyecto-Integrador-de-IA\\imagenes_limpias_reducido"
+DUP_FILE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\dup_report.txt"
+ORIG_BASE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\4_dataset_reducido_etiquetas_bien"
+NEW_BASE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\5_dataset_reducido_etiquetas_bien"
 
 # ======================
 # Crear estructura de carpetas destino

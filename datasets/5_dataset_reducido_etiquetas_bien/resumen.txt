@@ -1,0 +1,5 @@
+Total de imágenes encontradas: 932
+Teóricamente, no hay duplicados y las etiquetas están bien actualizadas
+Train: 652 imágenes
+Val:   186 imágenes
+Test:  94 imágenes

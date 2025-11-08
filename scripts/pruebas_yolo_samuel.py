@@ -15,11 +15,11 @@ def check_dataset_structure(base_dir):
     for d in expected_dirs:
         path = os.path.join(base_dir, d)
         if not os.path.exists(path):
-            print(f"❌ Falta la carpeta: {path}")
+            print(f"Falta la carpeta: {path}")
             return False
         if not os.listdir(path):
-            print(f"⚠️ La carpeta {path} está vacía.")
-    print("✅ Estructura del dataset verificada correctamente.")
+            print(f"La carpeta {path} está vacía.")
+    print("Estructura del dataset verificada correctamente.")
     return True
 
 
@@ -78,7 +78,7 @@ if __name__ == "__main__": #puede no ser necesario en el cesga esl name=main
     print("Predicciones completadas. Archivos guardados en:", model.predictor.save_dir)
 
     # === EXPORTAR MODELO ===
-    print("💾 Exportando modelo a formato ONNX...")
+    print("Exportando modelo a formato ONNX...")
     model.export(format="onnx")
 
-    print("✅ Entrenamiento finalizado correctamente.")
+    print("Finetune finalizado correctamente.")

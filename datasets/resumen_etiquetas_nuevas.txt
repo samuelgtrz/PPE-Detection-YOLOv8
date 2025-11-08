@@ -1,0 +1,7 @@
+las etiquetas en los .txt empiezan con índice 0, Gloves sería la 0, Helmet la 1, etc
+
+etiquetas finales : [Gloves, Helmet, Human, Safety Boot, Safety Vest, glasses]
+
+clases a eliminar/juntar: [vest(juntar Safety Vest), hat(juntar con Helmet), boots(juntar con Safety Boot), helmet(juntar con Helmet), gloves(juntar con Gloves), no boot(borrar), no boots(borrar), no gloves(borrar), no hat(borrar), no vest(borrar)]
+
+de 16 clases pasamos a 6

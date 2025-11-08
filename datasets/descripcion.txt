@@ -1,0 +1,1 @@
+El número delante de la carpeta es la 'versión' del dataset en la que estamos, el último número que haya es el dataset actual, en el que estamos trabajando/usando
