@@ -60,8 +60,8 @@ if __name__ == "__main__":
     print("Iniciando entrenamiento...")
     results = model.train(
         data=DATA_YAML,                 # Ruta al archivo YAML
-        epochs=50,
-        patience=10,                    # Si el modelo deja de mejorar durante 10 épocas seguidas, el entrenamiento se detiene automáticamente
+        epochs=500,
+        patience=50,                    # Si el modelo deja de mejorar durante 50 épocas seguidas, el entrenamiento se detiene automáticamente
         imgsz=640,                      # Tamaño de entrada
         batch=32,                       # Tamaño del batch
         lr0=0.0005,                     # Learning rate inicial
@@ -71,7 +71,6 @@ if __name__ == "__main__":
         pretrained=True,                # Utiliza pesos preentrenados
         augment=True,                   # Utiliza data augmentation
         workers=4,                      # Número de hilos para carga de datos
-        #freeze=10                       # Congela las primeras 10 capas
     )
 
     # === VALIDACIÓN POST-ENTRENAMIENTO ===
@@ -80,7 +79,7 @@ if __name__ == "__main__":
     print(metrics)
 
     # Probar el modelo entrenado en el conjunto de test
-    results = model.predict(source="/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/dataset/test/images", save=True, conf=0.5)
+    results = model.predict(source="/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/dataset/test/images", save=True, conf=0.7)
     print("Predicciones completadas. Archivos guardados en:", model.predictor.save_dir)
 
     
