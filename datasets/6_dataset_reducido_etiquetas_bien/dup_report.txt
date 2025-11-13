@@ -1,0 +1,4 @@
+GROUP:
+C:\Users\Usuario\OneDrive - Universidade de Santiago de Compostela\GRIA\4º CURSO. 1º CUADRIMESTRE\Proxecto Integrador II\Proyecto-Integrador-de-IA\datasets\6_dataset_reducido_etiquetas_bien\images\Video3_28_jpg.rf.00e98688416d979e2263020aabf18220.jpg
+C:\Users\Usuario\OneDrive - Universidade de Santiago de Compostela\GRIA\4º CURSO. 1º CUADRIMESTRE\Proxecto Integrador II\Proyecto-Integrador-de-IA\datasets\6_dataset_reducido_etiquetas_bien\images\Video3_29_jpg.rf.1f0076c502eeedfeebf499527e4eb63e.jpg
+

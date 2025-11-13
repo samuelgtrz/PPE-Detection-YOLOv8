@@ -103,7 +103,7 @@ def extract_embeddings(file_list):
             out = out.cpu().numpy()
             embs[i:i+len(batch_files)] = out
     # L2 normalize
-    norms = np.linalg.norm(embs, axis=1, keepdims=True)
+    norms = np.linalg.norm( s, axis=1, keepdims=True)
     norms[norms==0] = 1.0
     embs = embs / norms
     return embs
