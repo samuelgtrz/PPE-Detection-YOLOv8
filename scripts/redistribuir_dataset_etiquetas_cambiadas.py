@@ -5,8 +5,8 @@ import shutil
 # Este script lo usamos porque al crear el dataset nuevo con las etiquetass actualizadas a 6 clases, tenemos un dataset compacto sin dividir en train test y val. 
 # Este script lo que hace es dividir aleatoriamente ese dataset en esas tres partes y copiar las imágenes y etiquetas correspondientes a cada carpeta.
 
-DATASET_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\4_dataset_reducido_etiquetas_bien"   # carpeta original con /images y /labels
-OUTPUT_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\5_dataset_reducido_etiquetas_bien"  # carpeta donde se guardará el dataset dividido
+DATASET_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\6_provisional"   # carpeta original con /images y /labels
+OUTPUT_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\6_cuatro_clases"  # carpeta donde se guardará el dataset dividido
 
 TRAIN_RATIO = 0.7
 VAL_RATIO = 0.2
