@@ -1,0 +1,9 @@
+=== Iniciando limpieza de dataset ===
+Limpieza completada.
+Archivos conservados: 926
+Imágenes eliminadas por contener solo clases que se tienen que borrar: 6
+
+Nuevo YAML sugerido:
+--------------------------------------
+nc: 6
+names: ['Gloves', 'Helmet', 'Safety Boot', 'Safety Vest']
