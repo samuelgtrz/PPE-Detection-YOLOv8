@@ -11,6 +11,8 @@ def check_dataset_structure(base_dir):
         "train/labels",
         "val/images",
         "val/labels",
+        "test/images",
+        "test/labels"
     ]
 
     for d in expected_dirs:
@@ -59,26 +61,22 @@ if __name__ == "__main__":
     # === ENTRENAMIENTO (FINE-TUNING) ===
     print("Iniciando entrenamiento...")
     results = model.train(
-        data=DATA_YAML,        		# Ruta al archivo YAML
+        data=DATA_YAML,        	# Ruta al archivo YAML
         epochs=500,
-	    patience=30,			# Si el modelo deja de mejorar durante 30 épocas seguidas, el entrenamiento se detiene automáticamente
-        imgsz=640,              	# Tamaño de entrada
-        batch=32,               	# Tamaño del batch
-        lr0=0.0005,            		# Learning rate inicial
-        optimizer="AdamW",      	# Optimizador
-        device=device,          	# GPU o CPU
+        patience=30,   			# Si el modelo deja de mejorar durante 30 épocas seguidas, el entrenamiento se detiene automáticamente
+        imgsz=640,             	# Tamaño de entrada
+        batch=32,             	# Tamaño del batch
+        lr0=0.0005,        		# Learning rate inicial
+        optimizer="AdamW",     	# Optimizador
+        device=device,         	# GPU o CPU
         name="ppe_yolov8_finetuned",	# Carpeta de resultados
-        pretrained=True, 		# Utiliza pesos preentrenados
-	    augment=True,           	# Utiliza data augmentation
-        workers=4,             		# Número de hilos para carga de datos
+        pretrained=True,     	# Utiliza pesos preentrenados
+        augment=True,           # Utiliza data augmentation
+        workers=4,             	# Número de hilos para carga de datos
     )
 
-    # === VALIDACIÓN POST-ENTRENAMIENTO ===
-    print("Evaluando el modelo...")
-    metrics = model.val(data=DATA_YAML)
-    print(metrics)
-
-    # Probar el modelo entrenado en el conjunto de test
+    # === EVALUACIÓN EN TEST ===
+    print("Evaluando el modelo en el conjunto de test...")
     results = model.predict(source=BASE_DIR+"/test/images", save=True, conf=0.7)
     print("Predicciones completadas. Archivos guardados en:", model.predictor.save_dir)
 
