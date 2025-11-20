@@ -83,33 +83,6 @@ if __name__ == "__main__":
     print("Predicciones completadas. Archivos guardados en:", model.predictor.save_dir)
 
     
-    import csv
-
-    output_csv = ""
-
-    with open(output_csv, mode="w", newline="") as f:
-        writer = csv.writer(f)
-        writer.writerow(["image", "class_id", "confidence", "x1", "y1", "x2", "y2"])
-
-        for r in results:
-            img_path = os.path.basename(r.path)
-
-            boxes = r.boxes  # objetos detectados
-
-            for cls, conf, xyxy in zip(boxes.cls, boxes.conf, boxes.xyxy):
-                writer.writerow([
-                    img_path,
-                    int(cls.item()),
-                    float(conf.item()),
-                    float(xyxy[0]),
-                    float(xyxy[1]),
-                    float(xyxy[2]),
-                    float(xyxy[3]),
-                ])
-
-    print("CSV guardado en:", output_csv)
-
-
 
     # === EXPORTAR MODELO ===
     print("Exportando modelo a formato ONNX...")

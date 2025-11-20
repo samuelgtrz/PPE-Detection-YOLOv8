@@ -1,0 +1,13 @@
+train: /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/datasets
+val: /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/datasets
+test: /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/datasets
+
+nc: 4
+names: ['Gloves', 'Helmet', 'Safety Boot', 'Safety Vest']
+
+roboflow:
+  workspace: skcet-g4h72
+  project: construction-ppe-rdhzo
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/skcet-g4h72/construction-ppe-rdhzo/dataset/3
