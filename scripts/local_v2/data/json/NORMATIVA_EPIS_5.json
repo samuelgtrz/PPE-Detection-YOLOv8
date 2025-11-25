@@ -1,0 +1,117 @@
+{
+    "document_id": "1234",
+    "titulo": "Normativa de Seguridad Industrial - Normativa EPIS FÁBRICA GRIA GRUPO USC",
+    "fecha": "12-12-2024",
+    "areas": [
+        {
+            "nombre_area": "Almacén",
+            "requisitos_epi": [
+                {
+                    "nombre_epi": "casco de seguridad",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "chaleco reflectante",
+                    "uso_obligatorio": false
+                },
+                {
+                    "nombre_epi": "guantes de protección",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "gafas de seguridad",
+                    "uso_obligatorio": false
+                }
+            ]
+        },
+        {
+            "nombre_area": "Línea de Producción",
+            "requisitos_epi": [
+                {
+                    "nombre_epi": "casco de seguridad",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "chaleco reflectante",
+                    "uso_obligatorio": false
+                },
+                {
+                    "nombre_epi": "guantes de protección",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "gafas de seguridad",
+                    "uso_obligatorio": true
+                }
+            ]
+        },
+        {
+            "nombre_area": "Mantenimiento de Maquinaria",
+            "requisitos_epi": [
+                {
+                    "nombre_epi": "casco de seguridad",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "chaleco reflectante",
+                    "uso_obligatorio": false
+                },
+                {
+                    "nombre_epi": "guantes de protección",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "gafas de seguridad",
+                    "uso_obligatorio": true
+                }
+            ]
+        },
+        {
+            "nombre_area": "Área de Carga y Descarga",
+            "requisitos_epi": [
+                {
+                    "nombre_epi": "casco de seguridad",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "chaleco reflectante",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "guantes de protección",
+                    "uso_obligatorio": false
+                },
+                {
+                    "nombre_epi": "gafas de seguridad",
+                    "uso_obligatorio": false
+                }
+            ]
+        },
+        {
+            "nombre_area": "Manipulación de Productos Químicos",
+            "requisitos_epi": [
+                {
+                    "nombre_epi": "casco de seguridad",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "chaleco reflectante",
+                    "uso_obligatorio": false
+                },
+                {
+                    "nombre_epi": "guantes de protección",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "gafas de seguridad",
+                    "uso_obligatorio": true
+                }
+            ]
+        },
+        {
+            "nombre_area": "Oficina Técnica",
+            "requisitos_epi": []
+        }
+    ],
+    "tareas": []
+}
