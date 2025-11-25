@@ -4,12 +4,12 @@ import shutil
 
 
 # Carpeta donde están tus imágenes y labels
-DATASET_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\imagenes_reducidas_etiquetas_bien"
+DATASET_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\imagenes_reducidas"
 IMG_DIR = os.path.join(DATASET_DIR, "images")
 LBL_DIR = os.path.join(DATASET_DIR, "labels")
 
 # Carpeta destino del dataset limpio
-OUT_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\dataset_reducido_etiquetas_bien"
+OUT_DIR = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\6_provisional"
 OUT_IMG = os.path.join(OUT_DIR, "images")
 OUT_LBL = os.path.join(OUT_DIR, "labels")
 
@@ -24,37 +24,23 @@ os.makedirs(OUT_LBL, exist_ok=True)
 FINAL_CLASSES = [
     "Gloves",        # 0
     "Helmet",        # 1
-    "Human",         # 2
-    "Safety Boot",   # 3
-    "Safety Vest",   # 4
-    "glasses"        # 5
+    "Safety Boot",   # 2
+    "Safety Vest",   # 3
 ]
 
 # Mapeo desde clases antiguas -> nuevas clases
 CLASS_MAP = {
     "Gloves": "Gloves",
-    "gloves": "Gloves",
 
     "Helmet": "Helmet",
-    "helmet": "Helmet",
-    "hat": "Helmet",
-
-    "Human": "Human",
 
     "Safety Boot": "Safety Boot",
-    "boots": "Safety Boot",
 
     "Safety Vest": "Safety Vest",
-    "vest": "Safety Vest",
-
-    "glasses": "glasses",
 
     # Clases prohibidas (se eliminan)
-    "no boot": None,
-    "no boots": None,
-    "no gloves": None,
-    "no hat": None,
-    "no vest": None,
+    "Glasses": None,
+    "Human": None,
 }
 
 # ================================================================
@@ -62,9 +48,8 @@ CLASS_MAP = {
 # ================================================================
 
 ORIGINAL_CLASSES = [
-    'Gloves', 'Helmet', 'Human', 'Safety Boot', 'Safety Vest', 'boots',
-    'glasses', 'gloves', 'hat', 'helmet', 'no boot', 'no boots',
-    'no gloves', 'no hat', 'no vest', 'vest'
+    'Gloves', 'Helmet', 'Human', 'Safety Boot', 'Safety Vest',
+    'glasses'
 ]
 
 ORIG_INDEX_TO_NAME = {i: n for i, n in enumerate(ORIGINAL_CLASSES)}

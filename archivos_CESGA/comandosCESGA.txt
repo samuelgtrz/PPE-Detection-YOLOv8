@@ -40,19 +40,38 @@ Para eliminar o entorno: conda remove -n yolov8_env --all
 
 
 ************
+COMO LANZAR UN NOTEBOOK NO CESGA
+
+Para pedir un nodo con GPU e 16GB de memoria: compute --gpu --mem 16G
+
+Limpar os módulos precargados: module purge
+
+Cargar o módulo de Miniconda: module load cesga/system miniconda3
+
+Activar o entorno: conda activate /mnt/netapp2/Store_uni/home/usc/cursos/curso1278/teclin/teclin_env
+    - Para instalar notebook e jupyter (desde dentro do anterior entorno, só unha vez): pip install notebook. Agora poderemos utilizar sesións con notebooks.
+
+Lanzar un notebook no nodo con GPU: jupyter notebook --no-browser --ip=$(hostname -i)
+
+************
+
+
+
+
+************
 COMANDOS DE XESTIÓN XERAL DO CESGA
 
 Para conectarse ao CESGA: ssh -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es
 
 Para subir un arquivo ao CESGA: scp -o MACs=hmac-sha2-512 "nome_arquivo" curso1278@ft3.cesga.es:/ruta/á/carpeta
 
-Para subir un arquivo ao directorio $STORE/Proyecto-Integrador-de-IA: scp -o MACs=hmac-sha2-512 "nome_arquivo" curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/Proyecto-Integrador-de-IA/
+Para subir un arquivo ao directorio $STORE: scp -o MACs=hmac-sha2-512 "nome_arquivo" curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/
 
 Para descomprimir un zip no CESGA: unzip -o "nome_arquivo"
 
 Para comprimir unha carpeta no CESGA: zip -r "nome_carpeta".zip /ruta/á/carpeta
 
-Para descargar unha carpeta comprimida do CESGA: scp -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/"nome_carpeta".zip .
+Para descargar un arquivo do CESGA: scp -o MACs=hmac-sha2-512 curso1278@ft3.cesga.es:/mnt/netapp2/Store_uni/home/usc/cursos/curso1278/"nome_arquivo" .
 
 Para añadir un arquivo a GIT: git add "nome_arquivo"; git commit -m "explicación"; git push
 

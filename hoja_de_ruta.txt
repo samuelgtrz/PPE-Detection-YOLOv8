@@ -9,7 +9,14 @@
 3.1 NOTA: Eliminamos la clase Glasses porque no se estaba detectando; queda pendiente añadir los EPIs de gafas y máscaras.
 	Resultado: Aumentamos la precisión.
 
-4. Probar modelos de yolo más grandes, no solo el 8n (8s, 8m, …), con y sin el parámetro freeze.
-	Resultado: Parece que el mejor resultado es yolov8m sin freeze. Queda pendiente ajustar freeze.
+4. Probar modelos de yolo más grandes, no solo el 8n (8s, 8m, …), con y sin el parámetro freeze, con y sin dropout.
+	Resultado: Parece que el mejor resultado es yolov8m sin freeze. Dropout empeora mucho los resultados.
 
-5. Al ejecutar validación, añadir en el código algo que haga lo siguiente: esta imagen me da este score, y esta es la predicción, y esta es la real.
+5. Corregir mapeo y probar el script modulo_pln.py.
+	Resultado: Recibe un documento de normativas y devuelve el JSON normalizado.
+
+6. Rehacer script modulo_vc.py para que reciba un conjunto de imágenes sin etiquetar y las etiquete.
+
+7. Modificar script smiluación.py para que llame a los dos módulos y compare el JSON con las imágenes etiquetadas.
+
+Objetivo final. Al ejecutar validación, añadir en el código algo que haga lo siguiente: esta imagen me da este score, y esta es la predicción, y esta es la real.

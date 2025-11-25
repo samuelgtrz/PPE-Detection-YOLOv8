@@ -1,0 +1,1 @@
+Estos csv contienen las predicciones con respecto a una imagen de test, devuelve la imagen,las clases detectadas y la confianza

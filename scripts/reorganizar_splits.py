@@ -3,11 +3,17 @@ import shutil
 from collections import defaultdict
 from PIL import Image
 from tqdm import tqdm
+import random
 
 # === CONFIGURACIÓN ===
-DUP_FILE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\dup_report.txt"
-ORIG_BASE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\4_dataset_reducido_etiquetas_bien"
-NEW_BASE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\datasets\\5_dataset_reducido_etiquetas_bien"
+DUP_FILE = r"C:\Users\Usuario\OneDrive - Universidade de Santiago de Compostela\GRIA\4º CURSO. 1º CUADRIMESTRE\Proxecto Integrador II\Proyecto-Integrador-de-IA\datasets\6_dataset_reducido_etiquetas_bien\dup_report.txt"
+ORIG_BASE = r"C:\Users\Usuario\OneDrive - Universidade de Santiago de Compostela\GRIA\4º CURSO. 1º CUADRIMESTRE\Proxecto Integrador II\Proyecto-Integrador-de-IA\datasets\6_dataset_reducido_etiquetas_bien"
+IMG_DIR = os.path.join(ORIG_BASE, "images")
+LABEL_DIR = os.path.join(ORIG_BASE, "labels")
+NEW_BASE = r"C:\Users\Usuario\OneDrive - Universidade de Santiago de Compostela\GRIA\4º CURSO. 1º CUADRIMESTRE\Proxecto Integrador II\Proyecto-Integrador-de-IA\datasets\7_dataset_reorganizado_sin_duplicados"
+
+# Ratios para train/val/test
+RATIOS = {"train": 0.7, "valid": 0.2, "test": 0.1}
 
 # ======================
 # Crear estructura de carpetas destino
@@ -32,7 +38,7 @@ with open(DUP_FILE, "r", encoding="utf-8") as f:
 if current_group:
     groups.append(current_group)
 
-print(f"Se han leído {len(groups)} grupos de duplicados")
+print(f"📑 Se han leído {len(groups)} grupos de duplicados")
 
 # 2) Mapear cada imagen a su grupo
 img_to_group = {}
@@ -49,53 +55,55 @@ def choose_best_image(img_paths):
     best_count = -1
 
     for p in img_paths:
-        base, _ = os.path.splitext(os.path.basename(p))
-        # Buscar el txt correspondiente en las tres posibles carpetas
-        for split in ["train", "valid", "test"]:
-            lbl_path = os.path.join(ORIG_BASE, split, "labels", f"{base}.txt")
-            if os.path.exists(lbl_path):
-                try:
-                    with open(lbl_path, "r", encoding="utf-8") as f:
-                        count = sum(1 for _ in f)
-                    if count > best_count:
-                        best_count = count
-                        best_path = p
-                except Exception:
-                    continue
+        base = os.path.splitext(os.path.basename(p))[0]
+        lbl_path = os.path.join(LABEL_DIR, f"{base}.txt")
+        if os.path.exists(lbl_path):
+            try:
+                with open(lbl_path, "r", encoding="utf-8") as f:
+                    count = sum(1 for _ in f)
+                if count > best_count:
+                    best_count = count
+                    best_path = p
+            except Exception:
+                continue
 
-    # Si ninguna tiene etiqueta, devolver la primera
     return best_path or img_paths[0]
 
-# 4) Clasificar imágenes originales en grupos según split
-splits = ["train", "valid", "test"]
-split_counts = defaultdict(lambda: defaultdict(int))
-split_to_paths = defaultdict(list)
+# 4) Crear lista única sin duplicados
+all_images = [os.path.join(IMG_DIR, f)
+              for f in os.listdir(IMG_DIR)
+              if f.lower().endswith((".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"))]
 
-for split in splits:
-    split_dir = os.path.join(ORIG_BASE, split, "images")
-    for dirpath, _, fnames in os.walk(split_dir):
-        for fname in fnames:
-            if fname.lower().endswith((".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff")):
-                fpath = os.path.join(dirpath, fname)
-                gid = img_to_group.get(fpath)
-                if gid is not None:
-                    split_counts[gid][split] += 1
-                else:
-                    split_to_paths[split].append(fpath)
+unique_images = []
+seen_groups = set()
 
-# 5) Seleccionar una imagen por grupo y asignar split
-for gid, gpaths in enumerate(groups):
-    split_freq = split_counts[gid]
-    if not split_freq:
-        continue
-    majority_split = max(split_freq, key=split_freq.get)
-    chosen = choose_best_image(gpaths)
-    if chosen:
-        split_to_paths[majority_split].append(chosen)
+for img_path in all_images:
+    gid = img_to_group.get(img_path)
+    if gid is None:
+        # no pertenece a ningún grupo duplicado
+        unique_images.append(img_path)
+    elif gid not in seen_groups:
+        chosen = choose_best_image(groups[gid])
+        unique_images.append(chosen)
+        seen_groups.add(gid)
 
-# 6) Copiar imágenes y etiquetas filtradas a la nueva estructura
-for split, paths in split_to_paths.items():
-    print(f"Copiando {len(paths)} imágenes a {split}/ ...")
+print(f"✅ Total de imágenes únicas tras eliminar duplicados: {len(unique_images)}")
+
+# 5) Dividir en train/val/test
+random.shuffle(unique_images)
+n = len(unique_images)
+n_train = int(RATIOS["train"] * n)
+n_valid = int(RATIOS["valid"] * n)
+
+splits = {
+    "train": unique_images[:n_train],
+    "valid": unique_images[n_train:n_train+n_valid],
+    "test": unique_images[n_train+n_valid:]
+}
+
+# 6) Copiar imágenes y etiquetas a la nueva estructura
+for split, paths in splits.items():
+    print(f"\n📦 Copiando {len(paths)} imágenes a {split}/ ...")
     for p in tqdm(paths):
         relname = os.path.basename(p)
         base, _ = os.path.splitext(relname)
@@ -104,17 +112,12 @@ for split, paths in split_to_paths.items():
         out_img = os.path.join(NEW_BASE, split, "images", relname)
         shutil.copy2(p, out_img)
 
-        # Buscar la etiqueta correspondiente en cualquier split
-        label_found = False
-        for s2 in ["train", "valid", "test"]:
-            lbl_path = os.path.join(ORIG_BASE, s2, "labels", f"{base}.txt")
-            if os.path.exists(lbl_path):
-                out_lbl = os.path.join(NEW_BASE, split, "labels", f"{base}.txt")
-                shutil.copy2(lbl_path, out_lbl)
-                label_found = True
-                break
-
-        if not label_found:
+        # Copiar etiqueta correspondiente
+        lbl_path = os.path.join(LABEL_DIR, f"{base}.txt")
+        if os.path.exists(lbl_path):
+            out_lbl = os.path.join(NEW_BASE, split, "labels", f"{base}.txt")
+            shutil.copy2(lbl_path, out_lbl)
+        else:
             print(f"⚠️ No se encontró etiqueta para: {relname}")
 
 # 7) Comprobación final
@@ -124,6 +127,6 @@ for split in ["train", "valid", "test"]:
     imgs = {os.path.splitext(f)[0] for f in os.listdir(img_dir)}
     lbls = {os.path.splitext(f)[0] for f in os.listdir(lbl_dir)}
     missing = imgs - lbls
-    print(f"\n📊 {split}: {len(imgs)} imágenes, {len(lbls)} etiquetas, {len(missing)} sin etiqueta")    
+    print(f"\n📊 {split}: {len(imgs)} imágenes, {len(lbls)} etiquetas, {len(missing)} sin etiqueta")
 
-print("\n✅ Dataset limpio creado en:", NEW_BASE)
+print("\n✅ Dataset limpio y reorganizado creado en:", NEW_BASE)
