@@ -8,7 +8,7 @@ import csv
 from modulo_vc import model_loader, execute_model
 
 MODE_PATH = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\resultados_ejecuciones\\5_comparacion_runs_modelos\\detect_m_no_freeze\\ppe_yolov8_finetuned\\weights\\best.pt"
-OUTPUT_CSV_BASE = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\local\\data\\csv"
+OUTPUT_CSV_BASE = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\scripts\\local_v2\\data\\csv"
 
 
 def seleccionar_area(json_data):
@@ -174,7 +174,7 @@ def main():
         model_yolo = model_loader(MODE_PATH)
         ruta_imagen = seleccionar_imagen()
         if ruta_imagen:
-            # Nombre sin extensión
+            # Nombre sin extensin
             nombre_sin_ext = os.path.splitext(os.path.basename(ruta_imagen))[0]
 
             # Construir ruta final del CSV

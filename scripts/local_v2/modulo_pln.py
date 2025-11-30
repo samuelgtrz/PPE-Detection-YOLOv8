@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import filedialog
 import os
 
-CARPETA_JSON = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\local\\data\\json"
+CARPETA_JSON = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\scripts\\local_v2\\data\\json"
 
 # Se crea una instancia de la clase OpenAI
 client = OpenAI()  # Se necesita una API Key válida para usar OpenAI
