@@ -3,7 +3,6 @@ import os
 import csv
 
 
-
 # CARGAR MODELO
 def model_loader(MODE_PATH):
     model = YOLO(MODE_PATH)
@@ -12,6 +11,8 @@ def model_loader(MODE_PATH):
 
 def execute_model(model, IMAGE_PATH, OUTPUT_CSV):
     # ABRIR CSV PARA GUARDAR RESULTADOS
+    RUTA_PROYECTO_YOLO = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\scripts\\local_v3"
+    NOMBRE_RUN = "detecciones_EPI_final" #carpeta de destino de las detecciones
 
     with open(OUTPUT_CSV, mode="w", newline="") as f:
         writer = csv.writer(f)
@@ -23,9 +24,22 @@ def execute_model(model, IMAGE_PATH, OUTPUT_CSV):
         else:
             image_files = [IMAGE_PATH]
 
-        for img_path in image_files:
+        
+
+        for i, img_path in enumerate(image_files): # Usamos 'i' para controlar el bucle si fuera necesario
             img_name = os.path.basename(img_path)
-            results = model.predict(img_path, verbose=False, conf=0.7)
+
+            # Llama a predict
+            results = model.predict(
+                img_path, 
+                verbose=False, 
+                conf=0.7, 
+                save=True,
+                project=RUTA_PROYECTO_YOLO,
+                name=NOMBRE_RUN,
+                #Permite usar la carpeta existente
+                exist_ok=True 
+            )
 
             for r in results:
                 boxes = r.boxes
