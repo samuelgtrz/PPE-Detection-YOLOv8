@@ -11,7 +11,7 @@
                     "uso_obligatorio": true
                 },
                 {
-                    "nombre_epi": "guantes de protección",
+                    "nombre_epi": "guantes de proteccion",
                     "uso_obligatorio": true
                 },
                 {
@@ -32,12 +32,8 @@
                     "uso_obligatorio": true
                 },
                 {
-                    "nombre_epi": "guantes de protección",
+                    "nombre_epi": "guantes de proteccion",
                     "uso_obligatorio": true
-                },
-                {
-                    "nombre_epi": "botas",
-                    "uso_obligatorio": false
                 }
             ]
         }
@@ -51,7 +47,7 @@
                     "uso_obligatorio": true
                 },
                 {
-                    "nombre_epi": "guantes de protección",
+                    "nombre_epi": "guantes de proteccion",
                     "uso_obligatorio": true
                 },
                 {
@@ -61,7 +57,7 @@
             ]
         },
         {
-            "nombre_tarea": "Tarea de Carga y Descarga en el Almacén de Materiales",
+            "nombre_tarea": "Tarea de Carga y Descarga en e l Almacén de Materiales",
             "requisitos_epi": [
                 {
                     "nombre_epi": "casco de seguridad",
@@ -72,7 +68,7 @@
                     "uso_obligatorio": true
                 },
                 {
-                    "nombre_epi": "guantes de protección",
+                    "nombre_epi": "guantes de proteccion",
                     "uso_obligatorio": true
                 }
             ]
@@ -85,7 +81,24 @@
                     "uso_obligatorio": true
                 },
                 {
-                    "nombre_epi": "guantes de protección",
+                    "nombre_epi": "guantes de proteccion",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "gafas de seguridad",
+                    "uso_obligatorio": true
+                }
+            ]
+        },
+        {
+            "nombre_tarea": "Tarea de Soldadura y Corte de Materiales",
+            "requisitos_epi": [
+                {
+                    "nombre_epi": "casco de seguridad",
+                    "uso_obligatorio": true
+                },
+                {
+                    "nombre_epi": "guantes de proteccion",
                     "uso_obligatorio": true
                 },
                 {

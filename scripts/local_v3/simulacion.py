@@ -9,10 +9,11 @@ from modulo_pln import obtener_json_normativa
 from modulo_vc import model_loader, execute_model
 
 
-MODE_PATH = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\resultados_ejecuciones\\5_comparacion_runs_modelos\\detect_m_no_freeze\\ppe_yolov8_finetuned\\weights\\best.pt"
-OUTPUT_CSV_BASE = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\scripts\\local_v2\\data\\csv"
-#IMAGES_PATH = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\scripts\\local_v2\\data\\fotos_pruebas"
-IMAGES_PATH = "C:\\Users\\Roque\\Documents\\USC\\Curso_4\\Cuatri_1\\Proyecto_Integrador\\Work\\Proyecto-Integrador-de-IA\\scripts\\local_v2\\data\\test_imagtes\\images"
+MODE_PATH = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\resultados_ejecuciones\\7_comparacion_runs_v8m\\detect_20vs30_patience\\ppe_yolov8_finetuned_20\\weights\\best.pt"
+OUTPUT_CSV_BASE = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\scripts\\local_v3\\data\\csv"
+IMAGES_PATH = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\scripts\\local_v3\\data\\fotos_pruebas"
+#IMAGES_PATH = "C:\\Users\\sam20\\OneDrive\\Documentos\\IA\\CuartoIA\\Proyecto_Integrador_2\\Proyecto\\resultados_ejecuciones\\7_comparacion_runs_v8m\\detect_20vs30_patience\\ppe_yolov8_finetuned_20\\data\\test_imagtes\\images"
+
 epi_mapping_json = {
         "casco de seguridad": ["Helmet",0.8],
         "chaleco reflectante": ["Safety Vest",0.8],
