@@ -11,11 +11,11 @@ Algunos resultados obtenidos tras el fine-tuning del modelo:
 
 | Ejemplo 1 |
 |------------|
-| ![Inferencia 1](./resultados_ejecuciones/4_ppe_yolov8_finetuned_etiquetas_mod/predicciones/image_160_jpg.rf.2ec56a1123be881b57114fd04821d6cb.jpg) 
+| ![Inferencia 2](./fine_tunings/7_comparacion_runs_v8m/detect_20vs30_patience/predict_20/ppe_0961_jpg.rf.7494b8f700fd5908178be6e66587956d.jpg)
 
 | Ejemplo 2 |
 |------------|
-| ![Inferencia 2](./resultados_ejecuciones/4_ppe_yolov8_finetuned_etiquetas_mod/predicciones/Aitin0586_jpg.rf.8cad5fb756af5f7f315c920e6115014e.jpg)
+| ![Inferencia 1](./fine_tunings/7_comparacion_runs_v8m/detect_20vs30_patience/predict_20/00000075_jpg.rf.713a362429dec71962d36a7dc0aac654.jpg)
 
 
 ---
